@@ -40,14 +40,24 @@
         }
   </script>
 
+  <!-- scroll behavior -->
+   <style>
+    html {
+        scroll-behavior: smooth;
+    }
+    .active{
+        font-weight: bold;
+    }
+   </style>
+
     <!-- link style.css -->
      <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-green-light-02 overflow-x-hidden font-primary">
+<body class="bg-brand-green-light-02 overflow-x-hidden font-primary">
 
      <!-- header section -->
-      <header id="header" class="bg-brand-green-light text-primary fixed top-0 right-0 left-0 w-full">
-        <nav class="container max-w-screen-xl mx-auto flex justify-between items-center p-4">
+      <header id="header" class="bg-[#DCE9E2] text-primary fixed top-0 right-0 left-0 w-full z-50">
+        <nav class=" container max-w-screen-xl mx-auto flex justify-between items-center p-4">
 
 
             <!-- logo -->
@@ -63,13 +73,13 @@
                     <a href="#home" class="hover:text-primary">Início</a>
                 </li>
                 <li>
-                    <a href="#home" class="hover:text-primary">Serviços</a>
+                    <a href="#services" class="hover:text-primary">Serviços</a>
                 </li>
                 <li>
-                    <a href="#home" class="hover:text-primary">Sobre</a>
+                    <a href="#about" class="hover:text-primary">Sobre</a>
                 </li>
                 <li>
-                    <a href="#home" class="hover:text-primary">Depoimentos</a>
+                    <a href="#contact" class="hover:text-primary">Depoimentos</a>
                 </li>
             </ul>
 
@@ -91,12 +101,50 @@
              </div>
         </nav>
 
+
         <!-- ToDo: mobile menu -->
+        <div id="mobile-menu" class="navbar-menu relative z-50  hidden">
+            <div class="navbar-backdrop fixed inset-0 bg-primary">
+                <nav class="fixed top-0 left-0 bottom-0 flex flex-col w-full max-w-sm py-6 px-6 text-white border-r overflow-y-hidden">
+                    <div class="flex items-center mb-8">
+                        <a href="/" class="mr-auto text-2xl leading-none text-white">
+                            Doctor<span class="text-white">Care</span>
+                        </a>
+
+                        <button id="mobile-menu-close" class="navbar-close p-1 rounded-full bg-white">
+                            <img src="images/close-menu-icon.svg" alt="image" class="h-6 w-6 text-gray-600 cursor-pointer hover:text-gray-500">
+                        </button>
+                    </div>
+
+                    <div>
+                        <ul class="space-y-5">
+                           <li>
+                                <a href="#home" class="hover:text-primary">Início</a>
+                            </li>
+                            <li>
+                                <a href="#services" class="hover:text-primary">Serviços</a>
+                            </li>
+                            <li>
+                                <a href="#about" class="hover:text-primary">Sobre</a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="hover:text-primary">Depoimentos</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="block md:hidden mt-12">
+                         <a 
+                         id="contact-btn" href="#contact" class="text-primary bg-white hover:text-white border border-primary px-6 py-2.5 rounded-full hover:bg-primary transition-all duration-200 md:flex items-center justify-center">Agendar consulta</a>
+                     </div>
+                </nav>
+            </div>
+        </div>
       </header>
 
 
       <!-- hero or banner section -->
-       <section class="py-28 bg-brand-green-light flex items-center justify-between gap-8">
+       <section id="home" class="pt-36 pb-28 bg-brand-green-light flex items-center justify-between gap-8">
         <!-- container -->
         <div class="container max-w-screen-xl mx-auto px-4 flex md:flex-row flex-col items-center justify-between">
 
@@ -107,20 +155,17 @@
                 <!-- title -->
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">Assistência médica simplificada para todos</h1>
 
-                <p class="text-lg md:text-xl md-8 md:w-4/5">Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a longo prazo.</p>
+                <p class="text-lg md:text-xl mb-8 md:w-4/5">Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a longo prazo.</p>
 
 
                 <div class="text-center py-6">
-                    <button class="bg-primary text-white px-6 py-3 rounded-full text-lg hover:bg-brand-green-hover flex w-full sm:w-72 items-center justify-center gap-1">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <a href="#contact">Agende sua consulta</a>
-                    </button>
+                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full text-lg hover:bg-brand-green-hover flex w-full sm:w-72 items-center justify-center gap-1"> <i class="fa-brands fa-whatsapp"></i>Agende sua consulta</a>
                 </div>
 
              </div>
 
              <!-- image -->
-              <div class="w-full md:w-1/3 flex justify-center md:justify-end">
+              <div class="w-full md:w-1/3 flex justify-center md:justify-end hero-image">
                 <img src="images/hero-banner.png" alt="banner image" class="w-full object-cover">
               </div>
         </div>
@@ -150,15 +195,15 @@
             </div>
         </section>
 
-        <!-- inject service item into card -->
+        <!--   service item into card -->
 
-        <section class="mb:py-20 py-12 ">
+        <section id="services" class="md:py-20 py-12 ">
             <!-- container -->
-            <div class="container max-w-screen-xl mx-auto p-4 text-center">
+            <div class="container max-w-screen-xl mx-auto p-4 text-center service-section">
 
                 <!-- service title -->
                 <div class="service-content">
-                    <p class="text-primary text-lg md-4 mt-12">SERVIÇOS</p>
+                    <p class="text-primary text-lg mb-4 mt-12">SERVIÇOS</p>
                     <h2 class="text-3xl md:text-5xl md:leading-snug font-bold sm:w-1/2 mx-auto mb-12">Como podemos ajudá-lo a se sentir melhor?</h2>
                 </div>
 
@@ -172,7 +217,7 @@
 
 
         <!-- about section -->
-         <section class="md:py-20 py-12 bg-brand-beige">
+         <section id="about" class="md:py-20 py-12 bg-brand-beige">
             <!-- container -->
              <div class="py-12 max-w-screen-xl container mx-auto px-4 flex flex-col md:flex-row items-center gap-12 justify-between">
                 <!-- img -->
@@ -183,7 +228,7 @@
                  <!-- content -->
                  <div class="w-full md:w-1/2 md:pl-8 about-section"> 
                     <h3 class="text-primary font-bold text-sm mb-2.5">SOBRE NÓS</h3>
-                    <h2 class="text-3xl md:text-4xl font-bold text-headline mb-6 md:w-2/3">Entenda quem somos e por que existimos</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-headline mb-6 md:w-full">Entenda quem somos e por que existimos</h2>
 
                     <p class="text-[#495057] leading-relaxed">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.</p>
                  </div>
@@ -192,11 +237,11 @@
 
 
          <!-- contact section -->
-          <section class="md:py-20 py-12 ">
+          <section id="contact" class="md:py-20 py-12">
             <!-- container -->
              <div class="py-12 max-w-screen-xl container mx-auto px-4 flex flex-col md:flex-row-reverse items-center gap-12 justify-between">
                 <!-- img -->
-                 <div class="w-full md:w-1/2 mb-8 md:mb-0 about-section"> 
+                 <div class="w-full md:w-1/2 mb-8 md:mb-0 contact-image"> 
                     <img src="images/contact.png" alt="contact image" class="w-full h-auto rounded-lg">
                  </div>
 
@@ -216,10 +261,7 @@
 
                      <!-- button -->
                     <div class="text-center py-6 mt-8">
-                        <button class="bg-primary text-white px-6 py-3 rounded-full text-lg hover:bg-brand-green-hover flex w-full sm:w-72 items-center justify-center gap-1">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <a href="#contact">Agende sua consulta</a>
-                        </button>
+                        <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-full text-lg hover:bg-brand-green-hover flex w-full sm:w-72 items-center justify-center gap-1"> <i class="fa-brands fa-whatsapp"></i> Agende sua consulta</a>
                     </div>
                     
                  </div>
@@ -228,10 +270,10 @@
 
 
         <!--footer section  -->
-        <footer class="bg-primary text-white py-6 order-t border-white/20">
+        <footer class="bg-primary text-white py-6 border-t border-white/20">
 
             <!-- container -->
-             <div class="max-w-screen-xl container mx-auto py-8 px-4 flex flex-col sm:flex-row justify-between items-center gap-8">
+             <div class="max-w-screen-xl container mx-auto py-8 px-4 flex flex-col sm:flex-row justify-between items-center gap-8 footer-container">
                 <div>
                     <a href="/" class="block text-4xl font-bold text-white mb-4">
                         DoctorCare
@@ -255,6 +297,11 @@
              </div>
         </footer>
 
+        
+
+        <script src="js/app.js"></script>
         <script src="js/services.js"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="js/animation.js"></script>
 </body>
 </html>

@@ -38,7 +38,7 @@ function generateServiceHtml (service) {
     <div class ="p-6 text-left">
     <img src= "./images/service-icon.png" alt ="service icon">
     <h3 class ="text-2xl font-semibold my-4">${service.title}</h3>
-    <p class ="text-gray-700 md-4">${service.description}</p>
+    <p class ="text-gray-700 mb-4">${service.description}</p>
     </div>
     </div>
     `
